@@ -1,10 +1,11 @@
+import path from "path";
 import { promises as fs } from "fs";
 import { Lame } from "../src/lame";
 
-const TEST_DATA_DIR = __dirname + "../test/fixtures";
-const LEFT_FNAME = TEST_DATA_DIR + "/testdata-left.pcm";
-const RIGHT_FNAME = TEST_DATA_DIR + "/testdata-right.pcm";
-const OUT_FILE = TEST_DATA_DIR + "/sample-out-js.mp3";
+const TEST_DATA_DIR = path.join(__dirname, "../test/fixtures");
+const LEFT_FNAME = path.join(TEST_DATA_DIR, "input-mono.pcm");
+const RIGHT_FNAME = path.join(TEST_DATA_DIR, "input-mono.pcm");
+const OUT_FILE = path.join(TEST_DATA_DIR, "sample-out-js.mp3");
 
 async function main() {
   console.time("main");

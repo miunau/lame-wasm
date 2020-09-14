@@ -10,11 +10,11 @@ CLAME_SO=$(CDIST_DIR)/lib/libmp3lame.so
 
 all: lame_native.wasm
 
-
-# # WASM backend doesn't support EMSCRIPTEN_KEEPALIVE, see:
-# # https://github.com/kripken/emscripten/issues/6233
-# # Output to bare .wasm doesn't work properly so need to create
-# # intermediate files.
+# @TODO @HACK
+# WASM backend doesn't support EMSCRIPTEN_KEEPALIVE, see:
+# https://github.com/kripken/emscripten/issues/6233
+# Output to bare .wasm doesn't work properly so need to create
+# intermediate files.
 lame_native.wasm: $(WLAME_SO) lame_native_bindings.c
 	emcc $^ \
 	  -I$(WDIST_DIR)/include \
@@ -61,4 +61,3 @@ $(CLAME_SO):
 	./configure --prefix="$(CDIST_DIR)" && \
 	make -j8 && \
 	make install
-

@@ -39,7 +39,6 @@ ffmpeg -y  \
   -i $SOURCE_FILE \
   -acodec pcm_f32le -f f32le -ac 1 -ar 44100 ${DEST_FILE_PFX}input-mono.pcm
 
-
 $TS_RUNNER ./encode.ts ${DEST_FILE_PFX}input-mono.pcm > \
   ${DEST_FILE_PFX}output-mono.mp3
 $TS_RUNNER ./encode.ts ${DEST_FILE_PFX}input-stereo-{left,right}.pcm > \

@@ -6,10 +6,10 @@
   "types": "dist/lame.d.ts",
   "scripts": {
     "build-wasm": "cd src && make",
-    "build": "npm run build-wasm && tsc && cp src/lame_native.js src/lame_native.wasm dist",
+    "build": "yarn build-wasm && tsc && cp src/lame_native.js src/lame_native.wasm dist",
     "docs": "typedoc --mode library",
     "start": "parcel demo/index.html",
-    "example": "npm run build-wasm && npm run build && ts-node examples/lameTest.ts",
+    "example": "yarn build-wasm && yarn build && ts-node examples/lameTest.ts",
     "test": "mocha --recursive test/**/*.test.ts"
   },
   "keywords": [],
