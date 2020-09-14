@@ -23,6 +23,12 @@ export class Lame {
   private readonly pcmBuffers: Float32Array[];
   private readonly outputBuffer: Uint8Array;
 
+  /**
+   * ```ts
+   * const encoder = await Lame.load();
+   * encoder.encode(...);
+   * ```
+   */
   public static async load(
     params: Partial<{ wasmBinary: ArrayBuffer } & LameInitParams> = {}
   ) {
@@ -74,7 +80,7 @@ export class Lame {
     return ptr;
   }
 
-  public *encode(...channels: Float32Array[]): Iterable<Buffer> {
+  public *encode(...channels: Float32Array[]): Iterable<Uint8Array> {
     let elapsed = 0;
     let numChunks = 0;
     let totalEncoded = 0;
@@ -146,7 +152,7 @@ export class Lame {
 
       chunkStart = chunkEnd;
 
-      yield Buffer.from(outputChunk);
+      yield outputChunk;
     }
 
     if (this.params.debug) {

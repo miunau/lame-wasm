@@ -1,6 +1,5 @@
 import { promises as fs } from "fs";
-
-import { Lame } from "../dist/lame";
+import { Lame } from "../src/lame";
 
 const TEST_DATA_DIR = __dirname + "../test/fixtures";
 const LEFT_FNAME = TEST_DATA_DIR + "/testdata-left.pcm";

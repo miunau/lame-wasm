@@ -105,7 +105,6 @@ int lamejs_flush(lamejs *v) {
   return n;
 }
 
-
 WASM_EXPORT
 int lamejs_tag_frame(lamejs *v) {
   int n = lame_get_lametag_frame(v->gfp, v->outbuf, BUF_SIZE);

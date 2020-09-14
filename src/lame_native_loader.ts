@@ -32,7 +32,7 @@ export type WasmContext = WasmContextBase<WasmFunctions>;
 type WasmLoader<T> = (
   opts?: any
 ) => {
-  then: (resolve: (ctx: WasmContext & { then: () => void }) => void) => void;
+  then: (resolve: (ctx: T & { then: () => void }) => void) => void;
 };
 
 const generatedLoader = require("./lame_native.js") as WasmLoader<WasmContext>;

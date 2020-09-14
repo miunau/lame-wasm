@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["es2017"],
+    "lib": ["es2017", "es2018", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "preserveConstEnums": true,
     "sourceMap": true,
     "strict": true,
     "target": "ES2017",
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "demo"]
 }
