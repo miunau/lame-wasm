@@ -1,11 +1,11 @@
 {
   "name": "@amilajack/lame-wasm",
   "version": "1.0.0",
-  "description": "",
+  "description": "A WebAssembly MP3 Encoder that works in node and in the browser",
   "main": "dist/src/lame.js",
   "scripts": {
     "build-wasm": "cd src && make",
-    "build": "yarn build-wasm && tsc && cp src/lame_native.js src/lame_native.wasm dist/src",
+    "build": "yarn build-wasm && tsc && cp src/lame_native.wasm dist/src",
     "docs": "typedoc --mode library",
     "start": "parcel demo/index.html",
     "example": "yarn build-wasm && yarn build && ts-node examples/lameTest.ts",
@@ -14,9 +14,14 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "wasm",
+    "webassembly",
+    "mp3",
+    "encoder"
+  ],
+  "author": "Amila Welihinda <amilajack@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
@@ -32,6 +37,7 @@
     "gh-pages": "^3.1.0",
     "mocha": "^6.2.0",
     "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
     "typedoc": "^0.17.0-3",
