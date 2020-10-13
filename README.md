@@ -1,7 +1,7 @@
 @amilajack/lame-wasm
 ====================
 
-Works in node and in the browser
+A WebAssembly MP3 Encoder that works in node and in the browser.
 
 ## Setup
 
